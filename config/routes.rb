@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'dashboard/index'
+  devise_for :users
+  # Define route for the dashboard
+  get 'dashboard', to: 'dashboard#index', as: :dashboard
+
+  # Define root route (home page)
+  root 'home#index'
 end
